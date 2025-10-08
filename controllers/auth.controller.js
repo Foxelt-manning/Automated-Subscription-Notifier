@@ -72,7 +72,6 @@ export const signIn = async(req,res,next)=>{
         })
     } catch (error) {
         next(error)
-        
     }
 };
 

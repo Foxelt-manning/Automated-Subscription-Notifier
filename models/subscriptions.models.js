@@ -69,7 +69,7 @@ const subscriptionSchema = new mongoose.Schema({
 });
 
 // Pre-save middleware to set RenewalDate and update status
-subscriptionSchema.pre('save', function(next) {
+subscriptionSchema.pre('validate', function(next) {
     if (!this.RenewalDate) {
         const renewal = {
             daily: 1,
@@ -89,5 +89,5 @@ subscriptionSchema.pre('save', function(next) {
     next();
 });
 
-const Subscription = mongoose.model('Subscription',subscriptionSchema);
-export default Subscription;
+const subscription = mongoose.model('Subscription',subscriptionSchema);
+export default subscription;
