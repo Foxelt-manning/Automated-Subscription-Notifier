@@ -28,7 +28,7 @@ export const signUp = async(req,res,next)=>{
         const token = jwt.sign({userId: newUsers[0]._id},JWT_SECRET,{expiresIn:JWT_EXPIRES_IN});
 
         await session.commitTransaction();
-        session.endSession;
+        session.endSession();
         res.status(201).json({
             success:true,
             message:'User created succesfully',
@@ -44,6 +44,7 @@ export const signUp = async(req,res,next)=>{
         next(error);
     }
 };
+
 
 export const signIn = async(req,res,next)=>{
     try {

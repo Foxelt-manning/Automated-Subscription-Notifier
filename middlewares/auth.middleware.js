@@ -24,4 +24,4 @@ const authorize = async(req,resizeBy,next)=>{
 
 
 }
- export default authorize
+ export default authorize 
