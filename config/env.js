@@ -13,4 +13,5 @@ export const { PORT
     QSTASH_URL,
     QSTASH_TOKEN,
     SERVER_URL,
+   Email_Password,
 } = process.env;
